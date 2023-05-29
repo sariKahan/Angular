@@ -1,0 +1,23 @@
+<div id="allcomponent">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="collapse  navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLink="" routerLinkActive="active" style="cursor: pointer;">
+          <a class="nav-link">Home</a>
+        </li>
+        <li class="nav-item active" routerLink="/service" routerLinkActive="active" style="cursor: pointer;">
+          <a class="nav-link">Services</a>
+        </li>
+        <li class="nav-item" routerLink="/callUs" routerLinkActive="active" style="cursor: pointer;">
+          <a class="nav-link">Call Us</a>
+        </li>
+        <li class="nav-item" routerLink="/comment" routerLinkActive="active" style="cursor: pointer;">
+          <a class="nav-link">Comments</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- <img src="../assets/backGroundForProjectAngular.jpg" alt=""> -->
+  <p dir="rtl" style="font-size:30px ;">{{myTitle}}</p>
+  <router-outlet ></router-outlet>
+</div>

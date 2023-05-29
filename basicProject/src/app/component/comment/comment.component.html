@@ -1,0 +1,24 @@
+
+
+  <table class="table" dir="rtl">
+    <thead>
+        <tr>
+            <th scope="col">שם</th>
+            <th scope="col">התגובה</th>
+            <th scope="col"></th>
+          </tr>
+    </thead>
+    <tbody *ngFor = "let item of comments">
+        <tr class="table-info" [ngStyle]="{'border':item.like==maxLike()?'2px solid pink':''}" >
+            <td >{{item.name | name}}</td>
+            <td>{{item.yourComment |lowercase}}</td>
+            <td style="cursor: pointer;" (click)="addLike(item.id)">👍{{item.like}}</td>
+
+          </tr>
+          
+    </tbody>
+  </table>
+
+<!-- <input type="button" (click)="newCommentForm()" placeholder="bxdfghjk"> -->
+<button (click)="newCommentForm()">להוספת תגובה</button>
+<router-outlet></router-outlet>

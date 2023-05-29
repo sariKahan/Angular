@@ -1,0 +1,11 @@
+
+<h1>myServiceList</h1>
+<div *ngFor = "let item of Services" >
+    <div class="card" style="width: 18rem;" appColor>
+        <div class="card-body">
+          <h5 class="card-title">{{item.Name}}</h5>
+          <a (click)="moreDetails(item.Id)" style="cursor: pointer;"> more details</a>
+        </div>
+        <router-outlet *ngIf="item.Id==ChosenId"></router-outlet>
+      </div>
+</div>

@@ -1,0 +1,39 @@
+<div style="text-align: center;">
+  <p>פלונית אלמונית</p>
+  <p>email:plonitAlmonit@gmail.com</p>
+</div>
+<form (ngSubmit)="onSubmit()" #CallForm="ngForm" class="container-fluname" style="border:2px solid pink">
+  <p style="text-align: center;">צור קשר</p>
+  <div class="form-group row">
+    <label for="name" class="col-3">Name</label>
+    <div class="col-7">
+      <input type="text" class="form-control" #name="ngModel" [(ngModel)]="person.name" required name="name"
+        placeholder="name" pattern="([א-ת|a-z|A-Z]{2,10} {0,1}){1,6}">
+    </div>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      name not valid
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="tel" class="col-3">Tel</label>
+    <div class="col-7">
+      <input type="text" class="form-control" name="tel" placeholder="tel" required pattern="[\d]{9,10}" #tel="ngModel"
+        [(ngModel)]="person.tel">
+    </div>
+    <div [hidden]="tel.valid || tel.pristine" class="alert alert-danger">
+      tel not valid
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="note" class="col-3">Note</label>
+    <div class="col-7">
+      <textarea class="form-control" name="note" placeholder="note" required #note="ngModel"
+        [(ngModel)]="person.note"></textarea>
+    </div>
+    <div [hidden]="note.valid || note.pristine" class="alert alert-danger">
+      note not valid
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!CallForm.valid" style="margin-left: 50%;">Submit</button>
+</form>
